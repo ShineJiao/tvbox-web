@@ -1,0 +1,21 @@
+{
+  "spider": "",
+  "sites": [
+    {
+      "key": "example",
+      "name": "示例站点",
+      "type": 3,
+      "api": "https://api.example.com/api.php/provide/vod",
+      "search": 1,
+      "quickSearch": 1,
+      "filterable": 1
+    }
+  ],
+  "lives": [
+    {
+      "name": "示例直播",
+      "type": 0,
+      "url": "https://live.example.com/list.txt"
+    }
+  ]
+}

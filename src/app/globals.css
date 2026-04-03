@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 15, 23, 42;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.8);
+}
+
+/* 播放器样式 */
+.art-player {
+  @apply w-full h-full rounded-lg overflow-hidden;
+}
+
+.art-danmaku {
+  font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* 视频卡片动画 */
+.video-card {
+  @apply relative overflow-hidden rounded-lg transition-all duration-300;
+}
+
+.video-card:hover {
+  @apply transform scale-105 shadow-xl;
+}
+
+.video-card:hover .video-card-overlay {
+  @apply opacity-100;
+}
+
+.video-card-overlay {
+  @apply absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300;
+}
+
+/* 加载动画 */
+.loading-spinner {
+  @apply animate-spin rounded-full border-4 border-gray-300 border-t-primary-500;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 侧边栏过渡 */
+.sidebar-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-dark-700 hover:bg-dark-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+/* 输入框样式 */
+.input {
+  @apply w-full bg-dark-800 border border-dark-600 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+}
+
+/* 标签样式 */
+.tag {
+  @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-dark-700 text-gray-300;
+}
+
+/* 模态框背景 */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50;
+}
+
+.modal-content {
+  @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-dark-800 rounded-xl shadow-2xl z-50 max-h-[90vh] overflow-auto;
+}
+
+/* 网格布局 */
+.video-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4;
+}
+
+/* 响应式间距 */
+.section-padding {
+  @apply px-4 py-6 md:px-6 lg:px-8;
+}
