@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/vercel.json",
   "framework": "nextjs",
-  "regions": ["hkg1", "sfo1"],
   "headers": [
     {
       "source": "/(.*)",
